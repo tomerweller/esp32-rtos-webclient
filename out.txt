@@ -1,0 +1,160 @@
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+ets Jun  8 2016 00:22:57
+
+rst:0x10 (RTCWDT_RTC_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0x00
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3ffc0008,len:0
+load:0x3ffc0008,len:1964
+load:0x40078000,len:3648
+ho 0 tail 12 room 4
+load:0x40080000,len:256
+entry 0x40080034
+␛[0;32mI (569) heap_alloc_caps: Initializing heap allocator:␛[0m
+␛[0;32mI (569) heap_alloc_caps: Region 19: 3FFC16EC len 0001E914 tag 0␛[0m
+␛[0;32mI (570) heap_alloc_caps: Region 25: 3FFE8000 len 00018000 tag 1␛[0m
+␛[0;32mI (581) cpu_start: Pro cpu up.␛[0m
+␛[0;32mI (586) cpu_start: Starting app cpu, entry point is 0x40080be0␛[0m
+␛[0;32mI (0) cpu_start: App cpu up.␛[0m
+␛[0;32mI (601) cpu_start: Pro cpu start user code␛[0m
+␛[0;32mI (626) rtc: rtc v160 Nov 22 2016 19:00:05␛[0m
+␛[0;32mI (637) rtc: XTAL 40M␛[0m
+␛[0;32mI (850) phy: phy_version: 246, Nov 18 2016, 17:30:07, 0, 0␛[0m
+␛[0;32mI (1315) cpu_start: Starting scheduler on PRO CPU.␛[0m
+␛[0;32mI (720) cpu_start: Starting scheduler on APP CPU.␛[0m
+tcpip_task_hdlxxx : 3ffc6118, prio:18,stack:2048
+I (720) wifi: frc2_timer_task_hdl:3ffc7b94, prio:22, stack:2048
+
+I (730) wifi: pp_task_hdl : 3ffca3f4, prio:23, stack:8192
+E (730) wifi: timer:0x3ffb110c cb is null
+
+␛[0;32mI (730) blob: Setting WiFi configuration SSID Viral...␛[0m
+I (740) wifi: mode : sta (24:0a:c4:00:27:f4)
+I (860) wifi: n:1 0, o:1 0, ap:255 255, sta:1 0, prof:1
+I (1510) wifi: state: 0 -> 2 (b0)
+I (1510) wifi: state: 2 -> 3 (0)
+I (1520) wifi: state: 3 -> 5 (10)
+I (1530) wifi: connected with Viral, channel 1
+␛[0;32mI (4210) event: ip: 10.0.1.51, mask: 255.255.255.0, gw: 10.0.1.1␛[0m
+␛[0;32mI (4210) blob: Connected to AP␛[0m
+␛[0;32mI (5700) blob: DNS lookup succeeded. IP=151.101.116.133␛[0m
+␛[0;32mI (5700) blob: ... allocated socket
+␛[0m
+␛[0;32mI (5730) blob: ... connected␛[0m
+␛[0;32mI (5730) blob: ... socket send success␛[0m
+HTTP/1.1 200 OK
+Server: GitHub.com
+Content-Type: text/html; charset=utf-8
+Last-Modified: Thu, 15 Sep 2016 10:01:18 GMT
+Access-Control-Allow-Origin: *
+Expires: Tue, 29 Nov 2016 20:06:34 GMT
+Cache-Control: max-age=600
+X-GitHub-Request-Id: 689C5C19:23C33:11CA2800:583DDD6D
+Content-Length: 3384
+Accept-Ranges: bytes
+Date: Wed, 30 Nov 2016 00:13:46 GMT
+Via: 1.1 varnish
+Age: 327
+Connection: keep-alive
+X-Served-By: cache-bos8220-BOS
+X-Cache: HIT
+X-Cache-Hits: 3
+X-Timer: S1480464826.828114,VS0,VE0
+Vary: Accept-Encoding
+X-Fastly-Request-ID: 65004291276153b6ac0a66c0637e50dca57e4fa3
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Tomer Weller / A Blob</title>
+  <meta name="description" content="an indeterminate mass or shape">
+
+  <link rel="canonical" href="http://blob.tomerweller.com/">
+  <link rel="alternate" type="application/rss+xml" title="Tomer Weller / Blob" href="http://blob.tomerweller.com/feed.xml">
+  <link rel="stylesheet" href="/css/custom.css">
+  <link rel="stylesheet" href="/css/isso.css">
+  <link rel="stylesheet" href="/css/solarized_bright.css">
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="http://blob.tomerweller.com/images/">
+  <meta name="twitter:title" content="Tomer Weller / A Blob">
+  <meta name="twitter:description" content="an indeterminate mass or shape">
+  <meta name="twitter:creator" content="@tomerweller">
+  <!-- Open Graph -->
+  <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Tomer Weller / A Blob">
+  <meta property="og:description" content="an indeterminate mass or shape">
+  <meta property="og:url" content="http://blob.tomerweller.com/">
+
+  <meta property="og:site_name" content="Tomer Weller / Blob">
+
+</head>
+
+
+  <body>
+
+    <header>
+    <h2><i>Blob: an indeterminate mass or shape</i></h2>
+    <h5>Random stuff by Tomer Weller</h5>
+    <hr/>
+</header>
+
+
+    <div>
+        <h3>Posts</h3>
+
+<ul>
+  <li><a href="/reagent-import-react-components-from-npm">Clojurescript/Reagent : importing React components from NPM</a> (Jun 25, 2016)</li>
+  <li><a href="/free-live-streaming-in-two-hours">Setting up a free live streaming solution in two hours</a> (Mar 22, 2016)</li>
+  <li><a href="/cookie-interception-chrome-extension">Intercepting Cookies in a Chrome extension</a> (Feb 28, 2016)</li>
+  <li><a href="/a-blog-named-blob">A Blog named Blob</a> (Feb 11, 2016)</li>
+  <li><a href="/parse-is-dying-all-hail-the-benevolent-dictator">Parse is dying - all hail the benevolent dictator</a> (Jan 28, 2016)</li>
+</ul>
+
+<h3>Links</h3>
+
+<ul>
+  <li><a href="http://www.pubpub.org/pub/esp32-osx-setup">ESP32 - Toolchain setup on OSX</a> (Jan 2016)</li>
+  <li><a href="http://fab.cba.mit.edu/classes/865.15/people/tomer.weller/index.html">“How to Make Something that Makes (almost) Anything</a> (Spring 2015)</li>
+  <li><a href="http://fab.cba.mit.edu/classes/863.14/people/tomer_weller/index.html">“How to Make (almost) Anything”</a> (Fall 2014)</li>
+  <li><a href="http://www.tomerweller.com">My old portfolio website</a> (2014)</li>
+</ul>
+
+    </div>
+
+    <footer>
+  <hr/>
+  <a href="mailto:tomer.weller@gmail.com">tomer.weller@gmail.com</a>
+</footer>
+
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-44438132-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+  </body>
+
+</html>
+␛[0;32mI (6110) blob: ... done reading from socket. Last read return=14 errno=0
+␛[0m
+␛[0;32mI (6120) blob: 5... ␛[0m
+␛[0;32mI (7120) blob: 4... ␛[0m
+␛[0;32mI (8120) blob: 3... ␛[0m
+␛[0;32mI (9120) blob: 2... ␛[0m
+␛[0;32mI (10120) blob: 1... ␛[0m
+␛[0;32mI (11120) blob: 0... ␛[0m
