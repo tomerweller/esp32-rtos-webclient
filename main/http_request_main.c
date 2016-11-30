@@ -22,6 +22,9 @@
 #include "lwip/netdb.h"
 #include "lwip/dns.h"
 
+#include "driver/gpio.h"
+#include "sdkconfig.h"
+
 /* The examples use simple WiFi configuration that you can set via
    'make menuconfig'.
 
@@ -30,6 +33,9 @@
 */
 #define EXAMPLE_WIFI_SSID CONFIG_WIFI_SSID
 #define EXAMPLE_WIFI_PASS CONFIG_WIFI_PASSWORD
+
+#define IN_GPIO 13
+#define OUT_GPIO 14
 
 /* FreeRTOS event group to signal when we are connected & ready to make a request */
 static EventGroupHandle_t wifi_event_group;
@@ -164,11 +170,19 @@ static void http_get_task(void *pvParameters)
 
         ESP_LOGI(TAG, "... done reading from socket. Last read return=%d errno=%d\r\n", r, errno);
         close(s);
-        for(int countdown = 5; countdown >= 0; countdown--) {
-            ESP_LOGI(TAG, "%d... ", countdown);
-            vTaskDelay(1000 / portTICK_RATE_MS);
-        }
         ESP_LOGI(TAG, "Starting again!");
+    }
+}
+
+void ring_oscillator(void *pvParameter)
+{
+    gpio_pad_select_gpio(IN_GPIO);
+    gpio_pad_select_gpio(OUT_GPIO);
+    gpio_set_direction(IN_GPIO, GPIO_MODE_INPUT);
+    gpio_set_direction(OUT_GPIO, GPIO_MODE_OUTPUT);
+
+    while(1) {
+        gpio_set_level(OUT_GPIO, 1-gpio_get_level(IN_GPIO));
     }
 }
 
@@ -176,5 +190,6 @@ void app_main()
 {
     nvs_flash_init();
     initialise_wifi();
+    xTaskCreate(&ring_oscillator, "ring_oscillator", 512, NULL, 10, NULL);
     xTaskCreate(&http_get_task, "http_get_task", 2048, NULL, 5, NULL);
 }
